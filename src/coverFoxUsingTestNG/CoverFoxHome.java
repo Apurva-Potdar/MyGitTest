@@ -7,9 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class CoverFoxHome {
 
-	//1.
-	//2.
-	//3.
+	
 	@FindBy(xpath = "//div[text()='Female']") private WebElement femaleRadioButton;
 	
 	public CoverFoxHome(WebDriver driver)

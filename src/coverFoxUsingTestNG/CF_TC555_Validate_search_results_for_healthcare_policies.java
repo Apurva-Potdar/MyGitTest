@@ -1,7 +1,9 @@
 package coverFoxUsingTestNG;
 
+import java.io.IOException;
 import java.time.Duration;
 
+import org.apache.poi.EncryptedDocumentException;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.Reporter;
@@ -9,6 +11,9 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
+import utilityCoverFox.Utility;
+
 import org.openqa.selenium.edge.EdgeDriver;
 
 
@@ -41,7 +46,7 @@ public class CF_TC555_Validate_search_results_for_healthcare_policies {
 	}
 	
 	@BeforeMethod
-	public void addDetails() throws InterruptedException
+	public void addDetails() throws InterruptedException, EncryptedDocumentException, IOException
 	{
 		Reporter.log("clicking on female gender", true);
 		home.clickOnFemaleRadioButton();
@@ -53,6 +58,19 @@ public class CF_TC555_Validate_search_results_for_healthcare_policies {
 		health.clickOnButton();
 		Thread.sleep(2000);
 		
+//		Reporter.log("send the age of self and dependent ", true);
+//		memberDetails.myAgeSelect(Utility.readFromExcel(driver, 0, 0));
+//		memberDetails.daughterAgeSelect(Utility.readFromExcel(driver, 0, 1));
+//		memberDetails.spouseAgeSelect(Utility.readFromExcel(driver, 0, 2));
+//		memberDetails.clickOnButton();
+//		
+//		Reporter.log("select the pin and mobile no", true);
+//		addressDetails.sendPinCodeNo(Utility.readFromExcel(driver, 0, 3));
+//		addressDetails.sendMobileNo(Utility.readFromExcel(driver, 0, 4));
+//		addressDetails.clickOnContinueButton();
+//		Thread.sleep(2000);
+//		
+	
 		Reporter.log("send the age of self and dependent ", true);
 		memberDetails.myAgeSelect("27");
 		memberDetails.daughterAgeSelect("1");
@@ -61,11 +79,12 @@ public class CF_TC555_Validate_search_results_for_healthcare_policies {
 		
 		Reporter.log("select the pin and mobile no", true);
 		addressDetails.sendPinCodeNo("411023");
-		addressDetails.sendMobileNo("8421526902");
+		addressDetails.sendMobileNo("8321789023");
 		addressDetails.clickOnContinueButton();
 		Thread.sleep(2000);
 		
 	}
+	
 	
 	@Test
 	public void result()
