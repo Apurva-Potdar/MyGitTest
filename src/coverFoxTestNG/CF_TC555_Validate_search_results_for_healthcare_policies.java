@@ -64,7 +64,7 @@ public class CF_TC555_Validate_search_results_for_healthcare_policies {
 		
 		Reporter.log("select the pin and mobile no", true);
 		addressDetails.sendPinCodeNo("411023");
-		addressDetails.sendMobileNo("8421526902");
+		addressDetails.sendMobileNo("8421526908");
 		addressDetails.clickOnContinueButton();
 		Thread.sleep(2000);
 		
@@ -86,6 +86,6 @@ public class CF_TC555_Validate_search_results_for_healthcare_policies {
 	@AfterMethod
   public void closingBrowser() throws InterruptedException {
 		Thread.sleep(2000);
-		driver.close();
+//		driver.close();
   }
 }
